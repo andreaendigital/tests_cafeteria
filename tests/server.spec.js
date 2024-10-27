@@ -10,4 +10,10 @@ describe("Operaciones CRUD de cafes", () => {
       });
     
 
+      it("Devuelve un array", async () => {
+        const response = await request(app).get("/cafes");
+        expect(response.body).toBeInstanceOf(Array);
+      });
+
+      
 });
