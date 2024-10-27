@@ -15,5 +15,8 @@ describe("Operaciones CRUD de cafes", () => {
         expect(response.body).toBeInstanceOf(Array);
       });
 
-      
+      it("Devuelve un array con al menos un objeto", async () => {
+        const response = await request(app).get("/cafes");
+        expect(response.body.length).toBeGreaterThan(0);
+      });
 });
